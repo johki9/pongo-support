@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mochi Mart — Support</title>
+  <meta name="description" content="Help and support for Mochi Mart, your cozy grocery list companion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0608;
+      --bg-soft: #14090d;
+      --surface: #1a0e13;
+      --surface-2: #221319;
+      --border: #2a1820;
+      --text: #f5e8e3;
+      --text-soft: #c9b3ad;
+      --text-muted: #7a6660;
+      --accent: #e8b4b8;
+      --accent-soft: #d4969c;
+      --accent-glow: rgba(232, 180, 184, 0.15);
+      --pink: #f2c4c9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse at top, rgba(232, 180, 184, 0.08), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(212, 150, 156, 0.06), transparent 50%);
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 28px 60px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 24px;
+      background: linear-gradient(to bottom, transparent, var(--accent));
+    }
+
+    .eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(56px, 9vw, 88px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    h1 .ampersand {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 64px 0 48px;
+      color: var(--accent);
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--accent-soft);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 64px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 36px;
+      color: var(--text);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--text-soft);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.6;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .email-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .email-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .email-link:hover {
+      color: var(--pink);
+      border-bottom-color: var(--accent);
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-soft);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .copy-btn.copied {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .response-time {
+      margin-top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .faq-number {
+      font-size: 13px;
+      color: var(--accent);
+      font-style: normal;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      min-width: 24px;
+    }
+
+    .faq-answer {
+      color: var(--text-soft);
+      padding-left: 36px;
+      font-size: 15px;
+    }
+
+    .faq-answer a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.2s ease;
+    }
+
+    .faq-answer a:hover {
+      opacity: 0.7;
+    }
+
+    /* Privacy callout */
+    .privacy-callout {
+      background: var(--bg-soft);
+      border-left: 2px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 16px;
+    }
+
+    .privacy-callout p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    /* Privacy policy */
+    .privacy-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--text);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 16px;
+    }
+
+    .privacy-section ul li {
+      padding: 6px 0 6px 18px;
+      position: relative;
+    }
+
+    .privacy-section ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--accent);
+      font-size: 11px;
+    }
+
+    .privacy-section a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.2s ease;
+    }
+
+    .privacy-section a:hover {
+      opacity: 0.7;
+    }
+
+    .effective-date {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 60px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+
+    footer .heart {
+      color: var(--accent);
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.85; }
+    }
+
+    /* Stagger fade in */
+    .hero,
+    section {
+      animation: fadeUp 0.8s ease-out backwards;
+    }
+
+    .hero { animation-delay: 0.1s; }
+    section:nth-of-type(1) { animation-delay: 0.3s; }
+    section:nth-of-type(2) { animation-delay: 0.45s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.75s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 540px) {
+      .container { padding: 56px 20px 40px; }
+      .contact-card { padding: 32px 20px; }
+      .email-link { font-size: 22px; }
+      .faq-answer { padding-left: 0; }
+      h2 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="hero">
+      <div class="eyebrow">Support · Help · Hello</div>
+      <h1>Mochi Mart</h1>
+      <p class="tagline">Need a hand with your grocery list? You're in the right place.</p>
+    </header>
+
+    <div class="divider">
+      <span class="divider-symbol">✦</span>
+    </div>
+
+    <section>
+      <div class="contact-card">
+        <div class="contact-label">Get in touch</div>
+        <div class="email-wrapper">
+          <a class="email-link" href="mailto:support.mochi@gmail.com">support.mochi@gmail.com</a>
+          <button class="copy-btn" id="copyBtn" aria-label="Copy email address">Copy</button>
+        </div>
+        <div class="response-time">Usually a reply within 1–2 days ♡</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently asked</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-number">01</span>
+          <span>How do I add an item to my list?</span>
+        </div>
+        <div class="faq-answer">
+          Tap the <em>add an item…</em> field at the bottom of any list and type what you need. Mochi will sort it into the right category for you.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-number">02</span>
+          <span>Are nutrition estimates accurate?</span>
+        </div>
+        <div class="faq-answer">
+          They're approximations based on standard ingredient data and average serving sizes. Treat them as rough guides, not medical or dietary advice.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-number">03</span>
+          <span>How do I delete a list or an item?</span>
+        </div>
+        <div class="faq-answer">
+          Tap the trash icon in the top right of a list to remove the whole list. Swipe an individual item to remove just that one.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-number">04</span>
+          <span>I found a bug or have a feature request</span>
+        </div>
+        <div class="faq-answer">
+          Please email <a href="mailto:support.mochi@gmail.com">support.mochi@gmail.com</a> with as much detail as you can — what you were doing, what happened, and your iPhone model if relevant. Screenshots help a lot.
+        </div>
+      </div>
+
+    </section>
+
+    <div class="divider">
+      <span class="divider-symbol">✦</span>
+    </div>
+
+    <section id="privacy" class="privacy-section">
+      <h2>Privacy Policy</h2>
+      <div class="effective-date">Effective May 8, 2026</div>
+
+      <p>
+        Mochi Mart is a personal grocery list app. We've designed it to keep your data as quiet as possible — no accounts, no ads, no tracking. This page explains exactly what happens to your data so there are no surprises.
+      </p>
+
+      <h3>What stays on your device</h3>
+      <p>
+        Almost everything. The following is stored locally on your iPhone using standard iOS storage (AsyncStorage) and never leaves your device unless you use one of the AI features described below:
+      </p>
+      <ul>
+        <li>Your grocery lists, list names, items, quantities, and check-off state</li>
+        <li>Your pantry history (which items you buy and when you check them off)</li>
+        <li>App preferences and small bookkeeping (last-suggestion timestamps, category cache)</li>
+        <li>Photos taken with the in-app label scanner are held in memory only — they are not saved to your photo library, and are discarded as soon as the report is generated or the scanner is closed</li>
+      </ul>
+      <p>
+        Uninstalling the app removes all of this from your device.
+      </p>
+      <p>
+        One small exception: Mochi Mart stores a small amount of anonymous data (a random ID and basic list metadata, no personal info) in a private iCloud namespace, used to keep your experience consistent across reinstalls. When you delete the app, iOS will display a system warning that "data stored in iCloud will not be deleted" — that warning refers to this data. We don't require you to sign in or create an account to use the app.
+      </p>
+
+      <h3>What we send out</h3>
+      <p>
+        Some features use a third-party AI model to help with categorization, recipes, label analysis, and conversational suggestions. When you use these features, a small payload is sent to our forwarding server, which forwards it to a third-party AI provider and returns the result. The data sent depends on which feature is active:
+      </p>
+      <ul>
+        <li><strong>Chatting with Mochi:</strong> your typed message, your recent chat history with Mochi, and a snapshot of the active grocery list and pantry items</li>
+        <li><strong>Scanning a product label:</strong> the photo you captured, downscaled to roughly 1024 px wide and JPEG-compressed. Photos leave your device only when you explicitly tap "analyze" after reviewing them on the in-app review screen.</li>
+        <li><strong>Categorizing unknown items:</strong> just the item name (e.g., "oj")</li>
+        <li><strong>Greetings &amp; pantry suggestions:</strong> a short summary of your list state and any items that are about due</li>
+      </ul>
+      <p>
+        We do not send your name, email, phone number, location, contacts, photos from your photo library, or any device or advertising identifier — Mochi Mart never asks for any of these.
+      </p>
+
+      <h3>Permissions Mochi Mart asks for</h3>
+      <ul>
+        <li><strong>Camera</strong> — only when you open the label scanner. The camera is active only while the scanner is on screen, never in the background. Photos are not saved to your photo library.</li>
+      </ul>
+      <p>
+        iOS will prompt you the first time the scanner runs. You can revoke camera access at any time in Settings → Mochi.
+      </p>
+
+      <h3>Third parties</h3>
+      <ul>
+        <li>
+          <strong>A third-party AI provider</strong> processes the AI requests above, including any photos you submit for label analysis. Its own privacy terms apply to the data we send it. That data is retained only briefly for trust-and-safety review (by default, up to 30 days) and is not used to train its models.
+        </li>
+        <li>
+          <strong>A third-party cloud hosting provider</strong> runs our small forwarding server, and its infrastructure may log standard request metadata (such as IP address and timestamp).
+        </li>
+      </ul>
+      <p>
+        We do not use third-party analytics, crash reporters, or advertising SDKs.
+      </p>
+
+      <h3>What we don't do</h3>
+      <ul>
+        <li>No accounts, sign-in, or passwords</li>
+        <li>No advertising or marketing</li>
+        <li>No tracking across other apps or websites</li>
+        <li>No selling, sharing, or trading your data</li>
+        <li>No microphone, location, contacts, photo library, or advertising-identifier access</li>
+        <li>No background camera activity — the camera is active only while the label scanner is open and visible on screen</li>
+      </ul>
+
+      <h3>Children</h3>
+      <p>
+        Mochi Mart isn't directed at children under 13. We don't knowingly collect personal information from children. If you believe a child has used the app and you'd like the local data removed, just delete the app from their device.
+      </p>
+
+      <h3>Your choices</h3>
+      <p>
+        Because nothing is tied to an account, you control everything from the device:
+      </p>
+      <ul>
+        <li>Clear individual lists or items from inside the app</li>
+        <li>Uninstall the app to remove all local data</li>
+        <li>Email us if you want to know more about the data flow or have a request</li>
+      </ul>
+
+      <h3>Changes to this policy</h3>
+      <p>
+        If we update how data is handled, we'll update this page and bump the effective date above. Material changes will also be noted in the app's release notes.
+      </p>
+
+      <h3>Contact</h3>
+      <p>
+        Questions or concerns? Email <a href="mailto:support.mochi@gmail.com">support.mochi@gmail.com</a> and we'll get back to you within a few days.
+      </p>
+    </section>
+
+    <footer>
+      Made with <span class="heart">♡</span> &nbsp;·&nbsp; © 2026 Mochi Mart
+    </footer>
+
+  </div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const email = 'support.mochi@gmail.com';
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = 'Copied ♡';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        copyBtn.textContent = 'Press to select';
+      }
+    });
+  </script>
+</body>
+</html>
