@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mochi Mart — Support</title>
-  <meta name="description" content="Help and support for Mochi Mart, your cozy grocery list companion." />
+  <title>Pongo — Support</title>
+  <meta name="description" content="Help and support for Pongo, the free food and label scanner." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0a0608;
-      --bg-soft: #14090d;
-      --surface: #1a0e13;
-      --surface-2: #221319;
-      --border: #2a1820;
-      --text: #f5e8e3;
-      --text-soft: #c9b3ad;
-      --text-muted: #7a6660;
-      --accent: #e8b4b8;
-      --accent-soft: #d4969c;
-      --accent-glow: rgba(232, 180, 184, 0.15);
-      --pink: #f2c4c9;
+      --bg: #fff9f4;
+      --bg-soft: #fbf0e7;
+      --surface: #ffffff;
+      --surface-2: #fdf6ef;
+      --border: #eadfd4;
+      --text: #2b211c;
+      --text-soft: #6b5a50;
+      --text-muted: #9a8a80;
+      --accent: #e03e24;
+      --accent-soft: #f06a48;
+      --accent-glow: rgba(224, 62, 36, 0.10);
+      --accent-deep: #b8321d;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,8 +37,8 @@
       min-height: 100vh;
       overflow-x: hidden;
       background-image:
-        radial-gradient(ellipse at top, rgba(232, 180, 184, 0.08), transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(212, 150, 156, 0.06), transparent 50%);
+        radial-gradient(ellipse at top, rgba(224, 62, 36, 0.06), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(240, 106, 72, 0.05), transparent 50%);
     }
 
     .container {
@@ -84,11 +84,6 @@
       letter-spacing: -0.02em;
       color: var(--text);
       margin-bottom: 20px;
-    }
-
-    h1 .ampersand {
-      color: var(--accent);
-      font-weight: 400;
     }
 
     .tagline {
@@ -155,6 +150,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 30px rgba(43, 33, 28, 0.05);
     }
 
     .contact-card::before {
@@ -166,7 +162,7 @@
       width: 80%;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .contact-label {
@@ -196,7 +192,7 @@
     }
 
     .email-link:hover {
-      color: var(--pink);
+      color: var(--accent-deep);
       border-bottom-color: var(--accent);
     }
 
@@ -281,20 +277,6 @@
 
     .faq-answer a:hover {
       opacity: 0.7;
-    }
-
-    /* Privacy callout */
-    .privacy-callout {
-      background: var(--bg-soft);
-      border-left: 2px solid var(--accent);
-      padding: 20px 24px;
-      border-radius: 0 12px 12px 0;
-      margin-top: 16px;
-    }
-
-    .privacy-callout p {
-      margin-bottom: 0;
-      font-size: 15px;
     }
 
     /* Privacy policy */
@@ -387,7 +369,6 @@
     section:nth-of-type(1) { animation-delay: 0.3s; }
     section:nth-of-type(2) { animation-delay: 0.45s; }
     section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.75s; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -408,8 +389,8 @@
 
     <header class="hero">
       <div class="eyebrow">Support · Help · Hello</div>
-      <h1>Mochi Mart</h1>
-      <p class="tagline">Need a hand with your grocery list? You're in the right place.</p>
+      <h1>Pongo</h1>
+      <p class="tagline">The free food &amp; label scanner. Need a hand? You're in the right place.</p>
     </header>
 
     <div class="divider">
@@ -423,7 +404,7 @@
           <a class="email-link" href="mailto:support.mochi@gmail.com">support.mochi@gmail.com</a>
           <button class="copy-btn" id="copyBtn" aria-label="Copy email address">Copy</button>
         </div>
-        <div class="response-time">Usually a reply within 1–2 days ♡</div>
+        <div class="response-time">Usually a reply within 1–2 days.</div>
       </div>
     </section>
 
@@ -433,20 +414,20 @@
       <div class="faq-item">
         <div class="faq-question">
           <span class="faq-number">01</span>
-          <span>How do I add and edit items?</span>
+          <span>How do I scan a label?</span>
         </div>
         <div class="faq-answer">
-          Tap a list and start typing; press return to begin the next item, and tap any item to edit it. Typos fix themselves.
+          Tap the scan button and point your camera at the nutrition or ingredients panel — Pongo detects it and snaps the photo automatically. A few seconds later you get a clear report of what's inside.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
           <span class="faq-number">02</span>
-          <span>What's included with Premium?</span>
+          <span>Is Pongo really free?</span>
         </div>
         <div class="faq-answer">
-          Higher weekly limits for Mochi chats and label scans, plus the Pantry and the Berri character — a monthly subscription you can cancel anytime in iOS Settings.
+          Yes. Scanning is free — no account, no subscription, no ads.
         </div>
       </div>
 
@@ -478,55 +459,53 @@
 
     <section id="privacy" class="privacy-section">
       <h2>Privacy Policy</h2>
-      <div class="effective-date">Effective May 8, 2026</div>
+      <div class="effective-date">Effective July 15, 2026</div>
 
       <p>
-        Mochi Mart is a personal grocery list app. We've designed it to keep your data as quiet as possible — no accounts, no ads, no tracking. This page explains exactly what happens to your data so there are no surprises.
+        Pongo is a free food and label scanner. We've designed it to keep your data as quiet as possible — no accounts, no ads, no tracking. This page explains exactly what happens to your data so there are no surprises.
       </p>
 
       <h3>What stays on your device</h3>
       <p>
-        Almost everything. The following is stored locally on your iPhone using standard iOS storage (AsyncStorage) and never leaves your device unless you use one of the AI features described below:
+        Almost everything. The following is stored locally on your iPhone using standard iOS storage and never leaves your device:
       </p>
       <ul>
-        <li>Your grocery lists, list names, items, quantities, and check-off state</li>
-        <li>Your pantry history (which items you buy and when you check them off)</li>
-        <li>App preferences and small bookkeeping (last-suggestion timestamps, category cache)</li>
-        <li>Photos taken with the in-app label scanner are held in memory only — they are not saved to your photo library, and are discarded as soon as the report is generated or the scanner is closed</li>
+        <li>App preferences and small bookkeeping (like whether you've seen the scanner intro)</li>
+        <li>Your most recent scan report, kept until you dismiss it</li>
+        <li>Photos taken with the label scanner are held in memory only — they are not saved to your photo library, and are discarded as soon as the report is generated or the scanner is closed</li>
       </ul>
       <p>
         Uninstalling the app removes all of this from your device.
       </p>
       <p>
-        One small exception: Mochi Mart stores a small amount of anonymous data (a random ID and basic list metadata, no personal info) in a private iCloud namespace, used to keep your experience consistent across reinstalls. When you delete the app, iOS will display a system warning that "data stored in iCloud will not be deleted" — that warning refers to this data. We don't require you to sign in or create an account to use the app.
+        One small exception: Pongo stores a small amount of anonymous data (a random ID, no personal info) in a private iCloud namespace, used to keep your experience consistent across reinstalls. When you delete the app, iOS may display a system warning that "data stored in iCloud will not be deleted" — that warning refers to this data. We don't require you to sign in or create an account to use the app.
       </p>
 
       <h3>What we send out</h3>
       <p>
-        Some features use a third-party AI model to help with categorization, recipes, label analysis, and conversational suggestions. When you use these features, a small payload is sent to our forwarding server, which forwards it to a third-party AI provider and returns the result. The data sent depends on which feature is active:
+        Analyzing a label uses a third-party AI model. When you scan:
       </p>
       <ul>
-        <li><strong>Chatting with Mochi:</strong> your typed message, your recent chat history with Mochi, and a snapshot of the active grocery list and pantry items</li>
-        <li><strong>Scanning a product label:</strong> the photo you captured. Photos leave your device only when you explicitly tap "analyze" after reviewing them on the in-app review screen.</li>
-        <li><strong>Categorizing unknown items:</strong> just the item name (e.g., "oj")</li>
-        <li><strong>Greetings &amp; pantry suggestions:</strong> a short summary of your list state and any items that are about due</li>
+        <li><strong>Scanning a product label:</strong> the photo you captured is sent to our forwarding server, which passes it to a third-party AI provider and returns the report. Photos leave your device only when you explicitly tap "analyze" after reviewing them on the in-app review screen.</li>
+        <li><strong>Report-ready notifications:</strong> if you allow notifications, an anonymous push token is stored so we can let you know when a scan finishes while the app is in the background.</li>
       </ul>
       <p>
-        We do not send your name, email, phone number, location, contacts, photos from your photo library, or any device or advertising identifier — Mochi Mart never asks for any of these.
+        We do not send your name, email, phone number, location, contacts, photos from your photo library, or any device or advertising identifier — Pongo never asks for any of these.
       </p>
 
-      <h3>Permissions Mochi Mart asks for</h3>
+      <h3>Permissions Pongo asks for</h3>
       <ul>
         <li><strong>Camera</strong> — only when you open the label scanner. The camera is active only while the scanner is on screen, never in the background. Photos are not saved to your photo library.</li>
+        <li><strong>Notifications</strong> (optional) — a single "your report is ready" alert per scan. You can decline or revoke this and the app works exactly the same.</li>
       </ul>
       <p>
-        iOS will prompt you the first time the scanner runs. You can revoke camera access at any time in Settings → Mochi.
+        iOS will prompt you the first time each is needed. You can revoke access at any time in Settings → Pongo.
       </p>
 
       <h3>Third parties</h3>
       <ul>
         <li>
-          <strong>A third-party AI provider</strong> processes the AI requests above, including any photos you submit for label analysis. Its own privacy terms apply to the data we send it. That data is retained only briefly for trust-and-safety review (by default, up to 30 days) and is not used to train its models.
+          <strong>A third-party AI provider</strong> processes the photos you submit for label analysis. Its own privacy terms apply to the data we send it. That data is retained only briefly for trust-and-safety review (by default, up to 30 days) and is not used to train its models.
         </li>
         <li>
           <strong>A third-party cloud hosting provider</strong> runs our small forwarding server, and its infrastructure may log standard request metadata (such as IP address and timestamp).
@@ -546,17 +525,12 @@
         <li>No background camera activity — the camera is active only while the label scanner is open and visible on screen</li>
       </ul>
 
-      <h3>Children</h3>
-      <p>
-        Mochi Mart isn't directed at children under 13. We don't knowingly collect personal information from children. If you believe a child has used the app and you'd like the local data removed, just delete the app from their device.
-      </p>
-
       <h3>Your choices</h3>
       <p>
         Because nothing is tied to an account, you control everything from the device:
       </p>
       <ul>
-        <li>Clear individual lists or items from inside the app</li>
+        <li>Dismiss a report to clear it from the app</li>
         <li>Uninstall the app to remove all local data</li>
         <li>Email us if you want to know more about the data flow or have a request</li>
       </ul>
@@ -573,7 +547,7 @@
     </section>
 
     <footer>
-      Made with <span class="heart">♡</span> &nbsp;·&nbsp; © 2026 Mochi Mart
+      Made with <span class="heart">♥</span> &nbsp;·&nbsp; © 2026 Pongo
     </footer>
 
   </div>
@@ -585,7 +559,7 @@
     copyBtn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(email);
-        copyBtn.textContent = 'Copied ♡';
+        copyBtn.textContent = 'Copied!';
         copyBtn.classList.add('copied');
         setTimeout(() => {
           copyBtn.textContent = 'Copy';
